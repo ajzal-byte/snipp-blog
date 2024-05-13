@@ -16,7 +16,7 @@ const PostCard = ({ post }) => {
             />
           </div>
         )}
-        <span className={styles.date}>{post.createdAt.toLocaleDateString()}</span>
+        <span className={styles.date}>{new Date(post.createdAt).toLocaleDateString()}</span>
       </div>
       <div className={styles.bottom}>
         <h1 className={styles.title}>{post.title}</h1>
