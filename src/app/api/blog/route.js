@@ -7,7 +7,7 @@ export const GET = async (request) => {
     connectToDB()
 
     const posts = await Post.find();
-    return NextResponse(posts)
+    return NextResponse.json(posts)
   } catch (error) {
     console.error(error);
     return NextResponse("Failed to fetch posts");

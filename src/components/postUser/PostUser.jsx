@@ -2,6 +2,7 @@ import styles from "./postUser.module.css";
 import { getUser } from "../../lib/data";
 import Image from "next/image";
 
+// FETCH DATA WITH AN API
 // const getUser = async (userId) => {
 //   const res = await fetch(`https://jsonplaceholder.typicode.com/users/${userId}`);
 
@@ -13,6 +14,10 @@ import Image from "next/image";
 // }
 
 const PostUser = async ({ userId }) => {
+  // FETCH DATA WITH AN API
+  // const user = await getData(userId);
+
+  // FETCH DATA WITHOUT AN API
   const user = await getUser(userId);
   return (
     <div className={styles.container}>

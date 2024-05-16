@@ -1,9 +1,5 @@
 import React from "react";
 import { addPost, deletePost } from "../../lib/action";
-// const click  = async () => {
-//   "use server"
-//   console.log("clicked");
-// }
 
 const Test = () => {
   return (
