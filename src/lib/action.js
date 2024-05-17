@@ -85,13 +85,11 @@ export const login = async (formData) => {
 
   try {
     await signIn("credentials", { username, password });
-    // connectToDB();
-
-    // const user = await User.findOne({ username });
-
-    // if (!user) return "User doesn't exist";
   } catch (error) {
     console.error(error);
-    throw new Error(error);
+    if (error.message.includes("CredentialsSignin")) {
+      return { error: "Invalid username or password" };
+    }
+    throw error;
   }
 };

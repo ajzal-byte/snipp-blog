@@ -1,7 +1,32 @@
 import NextAuth from "next-auth";
 import GitHub from "next-auth/providers/github";
+import CredentialsProvider from "next-auth/providers/credentials";
 import { connectToDB } from "./connectToDB";
 import { User } from "./models";
+import bcrypt from "bcrypt";
+
+const login = async (credentials) => {
+  try {
+    connectToDB();
+    const user = await User.findOne({ username: credentials.username });
+
+    if (!user) throw new Error("User not found");
+
+    const isPasswordCorrect = await bcrypt.compare(
+      credentials.password,
+      user.password
+    );
+
+    console.log(isPasswordCorrect);
+
+    if (!isPasswordCorrect) throw new Error("Incorrect Password");
+
+    return user;
+  } catch (error) {
+    console.error(error);
+    throw new Error("Failed to login");
+  }
+};
 export const {
   handlers: { GET, POST },
   auth,
@@ -18,6 +43,17 @@ export const {
           access_type: "offline",
           response_type: "code",
         },
+      },
+    }),
+    CredentialsProvider({
+      async authorize(credentials) {
+        try {
+          const user = await login(credentials);
+          console.log("USER: ", user);
+          return user;
+        } catch (error) {
+          return null;
+        }
       },
     }),
   ],
