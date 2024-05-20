@@ -10,20 +10,18 @@ const login = async (credentials) => {
     connectToDB();
     const user = await User.findOne({ username: credentials.username });
 
-    if (!user) throw new Error("User not found");
+    if (!user) throw new Error("User doesn't exists");
 
     const isPasswordCorrect = await bcrypt.compare(
       credentials.password,
       user.password
     );
 
-    console.log(isPasswordCorrect);
 
     if (!isPasswordCorrect) throw new Error("Incorrect Password");
 
     return user;
   } catch (error) {
-    console.error(error);
     throw new Error("Failed to login");
   }
 };
@@ -49,7 +47,6 @@ export const {
       async authorize(credentials) {
         try {
           const user = await login(credentials);
-          console.log("USER: ", user);
           return user;
         } catch (error) {
           return null;

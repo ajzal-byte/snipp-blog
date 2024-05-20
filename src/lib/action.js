@@ -5,6 +5,7 @@ import { connectToDB } from "./connectToDB";
 import { Post, User } from "./models";
 import { signIn, signOut } from "./auth";
 import bcrypt from "bcrypt";
+import { AuthError } from "next-auth";
 
 export const addPost = async (formData) => {
   const { title, desc, slug, userId } = Object.fromEntries(formData);
@@ -80,21 +81,32 @@ export const register = async (previousState, formData) => {
     });
     await newUser.save();
     console.log("Saved to db");
+
+    return { success: true };
   } catch (error) {
     console.error(error);
     return { error: "Something went wrong!" };
   }
 };
 
-export const login = async (formData) => {
+export const login = async (prevState, formData) => {
   const { username, password } = Object.fromEntries(formData);
 
   try {
     await signIn("credentials", { username, password });
   } catch (error) {
-    console.error(error);
-    if (error.message.includes("CredentialsSignin")) {
-      return { error: "Invalid username or password" };
+    // if (error.message.includes("CredentialsSignin")) {
+    // return { error: "Invalid username or password" };
+    // }
+    if (error instanceof AuthError) {
+      switch (error.type) {
+        case "CredentialsSignin":
+          return { error: "Invalid credentials", status: "error" };
+        case "CredentialsSignin":
+          throw error;
+        default:
+          return { error: "Something went wrong", status: "error" };
+      }
     }
     throw error;
   }
