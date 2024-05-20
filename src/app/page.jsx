@@ -22,7 +22,7 @@ connectToDB()
         </div>
       </div>
       <div className={styles.imgContainer}>
-        <Image src="/hero.gif" alt="" fill className={styles.heroImg} />
+        <Image src="/computer.gif" style={{borderRadius: "10%"}} alt="" height={500} width={650} className={styles.heroImg} />
       </div>
     </div>
   );
