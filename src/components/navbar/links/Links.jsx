@@ -36,7 +36,9 @@ const Links = ({ session }) => {
         ))}
         {session?.user ? (
           <>
-            {session.user?.isAdmin && <NavLink item={{ title: "Admin", path: "/admin" }} />}
+            {session.user?.isAdmin && (
+              <NavLink item={{ title: "Admin", path: "/admin" }} />
+            )}
             <form action={handleLogout}>
               <button className={styles.logout}>Logout</button>
             </form>
@@ -58,6 +60,18 @@ const Links = ({ session }) => {
           {links.map((link) => (
             <NavLink item={link} key={link.path} />
           ))}
+          {session?.user ? (
+            <>
+              {session.user?.isAdmin && (
+                <NavLink item={{ title: "Admin", path: "/admin" }} />
+              )}
+              <form action={handleLogout}>
+                <button className={styles.logout}>Logout</button>
+              </form>
+            </>
+          ) : (
+            <NavLink item={{ title: "Login", path: "/login" }} />
+          )}
         </div>
       )}
     </div>

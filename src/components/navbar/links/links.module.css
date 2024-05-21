@@ -27,6 +27,7 @@
   }
 
   .mobileLinks {
+    z-index: 999;
     background-color: var(--bgSoft);
     position: absolute;
     top: 100px;
