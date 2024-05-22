@@ -18,10 +18,9 @@ export const generateMetadata = async ({ params }) => {
 
   // FETCH DATA WITH AN API
   const post = await getData(slug);
-  
+
   // FETCH DATA WITHOUT AN API
   // const post = await getPost(slug);
-
 
   return {
     title: post.title,
@@ -36,12 +35,7 @@ const SinglePostPage = async ({ params }) => {
     <div className={styles.container}>
       {post.img && (
         <div className={styles.imgContainer}>
-          <Image
-            src={post.img}
-            alt=""
-            fill
-            className={styles.img}
-          />
+          <Image src={post.img} alt="" fill className={styles.img} />
         </div>
       )}
       <div className={styles.textContainer}>

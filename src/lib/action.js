@@ -27,7 +27,7 @@ export const addPost = async (prevState, formData) => {
     revalidatePath("/admin");
   } catch (error) {
     console.error(error);
-    return {error: "Something went wrong!"}
+    return { error: "Something went wrong!" };
   }
 };
 
@@ -90,11 +90,8 @@ export const deleteUser = async (formData) => {
 };
 
 export const handleSocialLogin = async (formData) => {
-  // await signIn("github");
-
   const action = formData.get("action");
-  await signIn(action)
-
+  await signIn(action);
 };
 export const handleLogout = async () => {
   await signOut();

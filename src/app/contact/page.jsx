@@ -1,10 +1,9 @@
-import Image from "next/image"
-import styles from "./contact.module.css"
+import Image from "next/image";
+import styles from "./contact.module.css";
 
 export const metadata = {
   title: "Contact Page",
-  description:
-    "This is the Contact page of Snipp",
+  description: "This is the Contact page of Snipp",
 };
 
 const Contact = () => {
@@ -18,12 +17,18 @@ const Contact = () => {
           <input type="text" placeholder="Name and Surname" />
           <input type="text" placeholder="Email address" />
           <input type="text" placeholder="Phone Number (optional)" />
-          <textarea name="" id="" cols="30" rows="10" placeholder="Message"></textarea>
+          <textarea
+            name=""
+            id=""
+            cols="30"
+            rows="10"
+            placeholder="Message"
+          ></textarea>
           <button>Send</button>
         </form>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Contact
+export default Contact;

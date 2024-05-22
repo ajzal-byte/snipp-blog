@@ -34,7 +34,7 @@
   color: var(--text);
 }
 
-.form button{
+.form button {
   padding: 20px;
   background-color: var(--btn);
   color: var(--text);
@@ -45,7 +45,7 @@
 }
 
 @media (max-width: 768px) {
-  .container{
+  .container {
     flex-direction: column;
   }
 }

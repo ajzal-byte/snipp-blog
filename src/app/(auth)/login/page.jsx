@@ -7,8 +7,12 @@ const LoginPage = () => {
     <div className={styles.container}>
       <div className={styles.wrapper}>
         <form className={styles.socialForm} action={handleSocialLogin}>
-          <button name="action" value="google" className={styles.google}>Login with Google</button>
-          <button name="action" value="github" className={styles.github}>Login with Github</button>
+          <button name="action" value="google" className={styles.google}>
+            Login with Google
+          </button>
+          <button name="action" value="github" className={styles.github}>
+            Login with Github
+          </button>
         </form>
         OR
         <LoginForm />

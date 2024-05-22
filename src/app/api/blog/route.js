@@ -4,12 +4,12 @@ import { Post } from "../../../lib/models";
 
 export const GET = async (request) => {
   try {
-    connectToDB()
+    connectToDB();
 
     const posts = await Post.find();
-    return NextResponse.json(posts)
+    return NextResponse.json(posts);
   } catch (error) {
     console.error(error);
     return NextResponse("Failed to fetch posts");
   }
-}
+};

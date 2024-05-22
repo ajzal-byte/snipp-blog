@@ -1,4 +1,4 @@
-.container{
+.container {
   /* background-color: rgb(1, 1, 67); */
   height: 100px;
   display: flex;
@@ -6,8 +6,8 @@
   justify-content: space-between;
 }
 
-.logo{
+.logo {
   font-size: 30px;
   font-weight: bold;
-  color: #93B1A6;
+  color: #93b1a6;
 }

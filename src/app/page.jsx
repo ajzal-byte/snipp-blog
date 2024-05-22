@@ -1,8 +1,8 @@
 import Image from "next/image";
 import styles from "./home.module.css";
-import {connectToDB} from "../lib/connectToDB"
+import { connectToDB } from "../lib/connectToDB";
 const Home = () => {
-connectToDB()
+  connectToDB();
   return (
     <div className={styles.container}>
       <div className={styles.textContainer}>
@@ -22,7 +22,14 @@ connectToDB()
         </div>
       </div>
       <div className={styles.imgContainer}>
-        <Image src="/computer.gif" style={{borderRadius: "10%"}} alt="" height={500} width={650} className={styles.heroImg} />
+        <Image
+          src="/computer.gif"
+          style={{ borderRadius: "10%" }}
+          alt=""
+          height={500}
+          width={650}
+          className={styles.heroImg}
+        />
       </div>
     </div>
   );

@@ -1,4 +1,4 @@
-.container{
+.container {
   min-width: 100px;
   padding: 10px;
   border-radius: 20px;
@@ -6,7 +6,7 @@
   text-align: center;
 }
 
-.active{
+.active {
   background-color: var(--text);
   color: var(--bg);
 }

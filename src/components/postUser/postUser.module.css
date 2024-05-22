@@ -1,25 +1,25 @@
-.container{
+.container {
   display: flex;
   align-items: center;
   gap: 20px;
 }
 
-.avatar{
+.avatar {
   object-fit: cover;
   border-radius: 50%;
 }
 
-.texts{
+.texts {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
-.title{
+.title {
   color: gray;
   font-weight: bold;
 }
 
-.username{
+.username {
   font-weight: 500;
 }

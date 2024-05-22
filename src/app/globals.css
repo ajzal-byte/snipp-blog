@@ -1,27 +1,27 @@
-:root{
-  --bg: #0F0F0F;
-  --bgSoft: #1D1C20;
+:root {
+  --bg: #0f0f0f;
+  --bgSoft: #1d1c20;
   --text: white;
   --textSoft: #e5e5e5;
-  --btn: #183D3D;
+  --btn: #183d3d;
 }
 
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body{
+body {
   background-color: var(--bg);
   color: var(--text);
 }
 
-a{
+a {
   color: inherit;
 }
 
-.container{
+.container {
   width: 100%;
   margin: auto;
   padding-left: 50px;
@@ -33,19 +33,19 @@ a{
 }
 
 @media (max-width: 1536px) {
-  .container{
+  .container {
     width: 1366px;
   }
 }
 
 @media (max-width: 1366px) {
-  .container{
+  .container {
     width: 1280px;
   }
 }
 
 @media (max-width: 1280px) {
-  .container{
+  .container {
     width: 1024px;
     padding-left: 20px;
     padding-right: 20px;
@@ -53,25 +53,25 @@ a{
 }
 
 @media (max-width: 1024px) {
-  .container{
+  .container {
     width: 768px;
   }
 }
 
 @media (max-width: 768px) {
-  .container{
+  .container {
     width: 640px;
   }
 }
 
 @media (max-width: 640px) {
-  .container{
+  .container {
     width: 475px;
   }
 }
 
 @media (max-width: 475px) {
-  .container{
+  .container {
     width: 380px;
   }
 }

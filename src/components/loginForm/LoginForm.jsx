@@ -11,9 +11,7 @@ const LoginForm = () => {
       <input type="text" placeholder="Username" name="username" />
       <input type="password" placeholder="Password" name="password" />
       <button>Login</button>
-      <p style={{ color: "red" }}>
-        {state?.error}
-      </p>
+      <p style={{ color: "red" }}>{state?.error}</p>
       <Link href="/register">
         Don't have an account? <b>Register</b>
       </Link>

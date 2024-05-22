@@ -84,8 +84,7 @@ export const {
           console.error(error);
           return false;
         }
-      }
-      else if (account.provider === "google") {
+      } else if (account.provider === "google") {
         connectToDB();
         try {
           const user = await User.findOne({ email: profile.email });

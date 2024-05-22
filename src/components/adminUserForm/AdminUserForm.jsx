@@ -1,8 +1,8 @@
-"use client"
+"use client";
 
 import { useFormState } from "react-dom";
 import { addUser } from "../../lib/action";
-import styles from "./adminUserForm.module.css"
+import styles from "./adminUserForm.module.css";
 
 const AdminUserForm = () => {
   const [state, formAction] = useFormState(addUser, undefined);
@@ -12,7 +12,12 @@ const AdminUserForm = () => {
       <input type="text" name="username" placeholder="Username" required />
       <input type="email" name="email" placeholder="Email" required />
       <input type="password" name="password" placeholder="Password" required />
-      <input type="text" name="profilePic" placeholder="Profie Pic URL" required />
+      <input
+        type="text"
+        name="profilePic"
+        placeholder="Profie Pic URL"
+        required
+      />
       <select name="isAdmin" required>
         <option value="false">is Admin?</option>
         <option value="false">No</option>
@@ -22,6 +27,6 @@ const AdminUserForm = () => {
       <button>Add</button>
     </form>
   );
-}
+};
 
-export default AdminUserForm
+export default AdminUserForm;

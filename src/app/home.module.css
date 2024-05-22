@@ -1,30 +1,30 @@
-.container{
+.container {
   display: flex;
   gap: 100px;
 }
 
-.textContainer{
+.textContainer {
   flex: 1;
   display: flex;
   flex-direction: column;
   gap: 50px;
 }
 
-.title{
+.title {
   font-size: 96px;
-  color: #5C8374;
+  color: #5c8374;
 }
 
-.desc{
+.desc {
   font-size: 20px;
 }
 
-.buttons{
+.buttons {
   display: flex;
   gap: 20px;
 }
 
-.button{
+.button {
   padding: 20px;
   min-width: 120px;
   cursor: pointer;
@@ -32,40 +32,40 @@
   border-radius: 5px;
 }
 
-.button:first-child{
+.button:first-child {
   background-color: var(--btn);
   color: var(--text);
 }
 
-.brands{
+.brands {
   width: 500px;
   height: 50px;
   position: relative;
   filter: grayscale(1);
 }
 
-.imgContainer{
+.imgContainer {
   flex: 1;
   position: relative;
 }
 
 @media (max-width: 1024px) {
-  .container{
+  .container {
     flex-direction: column;
     text-align: center;
   }
 
-  .buttons{
+  .buttons {
     justify-content: center;
   }
 }
 
 @media (max-width: 768px) {
-  .title{
+  .title {
     font-size: 64px;
   }
 
-  .brands{
+  .brands {
     width: 100%;
   }
 }

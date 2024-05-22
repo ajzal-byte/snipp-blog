@@ -6,7 +6,7 @@ const Footer = () => {
     <div className={styles.container}>
       <div className={styles.logo}>
         <Link
-          href="https://github.com/ajzal-byte/snipp-blog"
+          href="https://github.com/ajzal-byte"
           rel="noopener noreferrer"
           target="_blank"
         >
@@ -14,7 +14,13 @@ const Footer = () => {
         </Link>
       </div>
       <div className={styles.text}>
-        Snipp Blogs &#169; All rights reserved
+        <Link
+          href="https://github.com/ajzal-byte/snipp-blog"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          Snipp Blogs &#169; All rights reserved
+        </Link>
       </div>
     </div>
   );

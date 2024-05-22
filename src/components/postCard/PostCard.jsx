@@ -8,15 +8,12 @@ const PostCard = ({ post }) => {
       <div className={styles.top}>
         {post.img && (
           <div className={styles.imgContainer}>
-            <Image
-              src={post.img}
-              alt=""
-              className={styles.img}
-              fill
-            />
+            <Image src={post.img} alt="" className={styles.img} fill />
           </div>
         )}
-        <span className={styles.date}>{new Date(post.createdAt).toLocaleDateString()}</span>
+        <span className={styles.date}>
+          {new Date(post.createdAt).toLocaleDateString()}
+        </span>
       </div>
       <div className={styles.bottom}>
         <h1 className={styles.title}>{post.title}</h1>

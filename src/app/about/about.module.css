@@ -23,19 +23,19 @@
   font-weight: 300;
 }
 
-.boxes{
+.boxes {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.box{
+.box {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
-.box h1{
+.box h1 {
   color: var(--btn);
 }
 
@@ -44,16 +44,16 @@
   position: relative;
 }
 
-.img{
+.img {
   object-fit: contain;
 }
 
 @media (max-width: 768px) {
-  .container{
+  .container {
     flex-direction: column;
   }
 
-  .boxes{
+  .boxes {
     flex-direction: column;
     gap: 50px;
     text-align: center;

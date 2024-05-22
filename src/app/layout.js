@@ -7,9 +7,10 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata = {
   title: {
     default: "Snipp",
-    template: "%s | Snipp"
+    template: "%s | Snipp",
   },
-  description: "Articulating our voice and connecting with you on our vibrant Content Hub.",
+  description:
+    "Articulating our voice and connecting with you on our vibrant Content Hub.",
 };
 
 export default function RootLayout({ children }) {
@@ -17,9 +18,9 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={inter.className}>
         <div className="container">
-        <Navbar />
-        {children}
-        <Footer />
+          <Navbar />
+          {children}
+          <Footer />
         </div>
       </body>
     </html>

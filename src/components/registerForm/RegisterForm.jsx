@@ -22,9 +22,7 @@ const RegisterForm = () => {
       <input type="password" placeholder="Password" name="password" />
       <input type="password" placeholder="Confirm Password" name="cpassword" />
       <button>Register</button>
-      <p style={{ color: "red" }}>
-        {state?.error}
-      </p>
+      <p style={{ color: "red" }}>{state?.error}</p>
       <Link href="/login">
         Have an account? <b>Login</b>
       </Link>
