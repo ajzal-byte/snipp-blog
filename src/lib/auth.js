@@ -1,10 +1,19 @@
 import NextAuth from "next-auth";
 import GitHub from "next-auth/providers/github";
+import Google from "next-auth/providers/google";
 import CredentialsProvider from "next-auth/providers/credentials";
 import { connectToDB } from "./connectToDB";
 import { User } from "./models";
 import bcrypt from "bcrypt";
 import { authConfig } from "./auth.config";
+
+const authorization = {
+  params: {
+    prompt: "consent",
+    access_type: "offline",
+    response_type: "code",
+  },
+};
 
 const login = async (credentials) => {
   try {
@@ -33,16 +42,16 @@ export const {
 } = NextAuth({
   ...authConfig,
   providers: [
+    Google({
+      clientId: process.env.GOOGLE_CLIENT_ID,
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+      authorization,
+    }),
+
     GitHub({
       clientId: process.env.GITHUB_CLIENT_ID,
       clientSecret: process.env.GITHUB_CLIENT_SECRET,
-      authorization: {
-        params: {
-          prompt: "consent",
-          access_type: "offline",
-          response_type: "code",
-        },
-      },
+      authorization,
     }),
     CredentialsProvider({
       async authorize(credentials) {
@@ -60,10 +69,7 @@ export const {
       if (account.provider === "github") {
         connectToDB();
         try {
-          console.log("email", profile.email);
           const user = await User.findOne({ email: profile.email });
-
-          console.log(user);
 
           if (!user) {
             const newUser = new User({
@@ -73,15 +79,34 @@ export const {
             });
 
             await newUser.save();
-            console.log("New User: ", newUser);
           }
         } catch (error) {
           console.error(error);
           return false;
         }
       }
+      else if (account.provider === "google") {
+        connectToDB();
+        try {
+          const user = await User.findOne({ email: profile.email });
+
+          if (!user) {
+            const newUser = new User({
+              username: profile.given_name || profile.name,
+              email: profile.email,
+              profilePic: profile.picture,
+            });
+
+            await newUser.save();
+          }
+        } catch (error) {
+          console.error(error);
+          return false;
+        }
+      }
+
       return true;
     },
-    ...authConfig.callbacks
+    ...authConfig.callbacks,
   },
 });

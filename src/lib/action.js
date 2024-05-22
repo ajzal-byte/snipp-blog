@@ -89,8 +89,12 @@ export const deleteUser = async (formData) => {
   }
 };
 
-export const handleGithubLogin = async () => {
-  await signIn("github");
+export const handleSocialLogin = async (formData) => {
+  // await signIn("github");
+
+  const action = formData.get("action");
+  await signIn(action)
+
 };
 export const handleLogout = async () => {
   await signOut();
