@@ -1,5 +1,6 @@
 import styles from "./blog.module.css";
 import { PostCard } from "../../components";
+import Image from "next/image";
 // import { getPosts } from "../../lib/data";
 
 const getData = async () => {
@@ -25,12 +26,31 @@ const BlogPage = async () => {
   // const posts = await getPosts();
 
   return (
-    <div className={styles.container}>
-      {posts.map((post) => (
-        <div className={styles.post} key={post.id}>
-          <PostCard post={post} />
+    <div>
+      {posts.length > 0 ? (
+        <div className={styles.container}>
+          {posts.map((post) => (
+            <div className={styles.post} key={post.id}>
+              <PostCard post={post} />
+            </div>
+          ))}
         </div>
-      ))}
+      ) : (
+        <div className={styles.noPosts}>
+          <div>
+          <h1 style={{fontSize: "56px"}}>No posts available</h1>
+          <p>Look's like someone's thinking on <span style={{fontWeight: "bold"}}>WHAT TO WRITE!</span></p>
+          </div>
+          <div className={styles.imgcontainer}>
+            <Image
+              className={styles.img}
+              src="/thinking.svg"
+              alt="thinking"
+              fill
+            />
+          </div>
+        </div>
+      )}
     </div>
   );
 };

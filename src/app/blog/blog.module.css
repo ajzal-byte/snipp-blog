@@ -8,6 +8,25 @@
   width: 30%;
 }
 
+.noPosts {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.imgcontainer {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  margin-left: 2rem;
+}
+
+.img {
+  object-fit: contain;
+}
+
 @media screen and (max-width: 1280px) {
   .post {
     width: 45%;
