@@ -8,6 +8,7 @@ import AdminPosts from "./adminPosts/AdminPosts";
 import AdminPostForm from "./adminPostForm/AdminPostForm";
 import AdminUsers from "./adminUsers/AdminUsers";
 import AdminUserForm from "./adminUserForm/AdminUserForm";
+import ContactForm from "./contactForm/ContactForm";
 
 export {
   Navbar,
@@ -20,4 +21,5 @@ export {
   AdminPostForm,
   AdminUsers,
   AdminUserForm,
+  ContactForm,
 };
