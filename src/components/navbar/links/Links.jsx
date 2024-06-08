@@ -50,7 +50,7 @@ const Links = ({ session }) => {
       <Image
         className={styles.menuButton}
         src="/menu.png"
-        alt=""
+        alt="menu icon"
         width={30}
         height={30}
         onClick={() => setOpen((prev) => !prev)}

@@ -33,7 +33,7 @@ const Home = () => {
         <Image
           src="/computer.gif"
           style={{ borderRadius: "10%" }}
-          alt=""
+          alt="computer gif"
           height={324}
           width={480}
           className={styles.heroImg}

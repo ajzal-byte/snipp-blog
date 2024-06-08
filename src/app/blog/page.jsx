@@ -39,7 +39,7 @@ const BlogPage = async () => {
         <div className={styles.noPosts}>
           <div>
           <h1 style={{fontSize: "56px"}}>No posts available</h1>
-          <p>Look's like someone's thinking on <span style={{fontWeight: "bold"}}>WHAT TO WRITE!</span></p>
+          <p>Look&apos;s like someone&apos;s thinking on <span style={{fontWeight: "bold"}}>WHAT TO WRITE!</span></p>
           </div>
           <div className={styles.imgcontainer}>
             <Image

@@ -24,6 +24,7 @@ const PostUser = async ({ userId }) => {
       <Image
         className={styles.avatar}
         src={user.img ? user.img : "/noavatar.png"}
+        alt="profile pic"
         width={50}
         height={50}
       />
